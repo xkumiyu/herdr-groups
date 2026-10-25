@@ -1,0 +1,18 @@
+# Standalone example: merge these rows into your own Herdr config.
+[ui.sidebar.spaces]
+rows = [
+  [
+    { token = "workspace", rules = [{ starts_with = "▪ ", hide = true }] },
+    { token = "$herdr_groups_grey", fg = "#A0A0A0", bold = true },
+    { token = "$herdr_groups_blue", fg = "#61AFEF", bold = true },
+    { token = "$herdr_groups_orange", fg = "#E5A067", bold = true },
+    { token = "$herdr_groups_green", fg = "#98C379", bold = true },
+    { token = "$herdr_groups_red", fg = "#E06C75", bold = true },
+    { token = "$herdr_groups_purple", fg = "#C678DD", bold = true },
+    { token = "$herdr_groups_yellow", fg = "#E5C07B", bold = true },
+    { token = "$herdr_groups_cyan", fg = "#56B6C2", bold = true },
+    { token = "$herdr_groups_white", fg = "#FFFFFF", bold = true },
+    "git_status",
+  ],
+  ["$herdr_groups_spacer"],
+]

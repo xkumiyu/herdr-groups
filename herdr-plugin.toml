@@ -1,0 +1,113 @@
+id = "herdr-groups"
+name = "Herdr Groups"
+version = "0.1.0"
+min_herdr_version = "0.9.5"
+description = "User-defined Space groups in the standard sidebar."
+platforms = ["linux", "macos"]
+
+[[startup]]
+command = ["python3", "plugin.py", "restore"]
+
+[[actions]]
+id = "setup"
+title = "Herdr Groups: show sidebar config example"
+contexts = ["global"]
+command = ["python3", "plugin.py", "prompt", "setup"]
+
+[[actions]]
+id = "start"
+title = "Herdr Groups: start updates"
+contexts = ["global"]
+command = ["python3", "plugin.py", "start"]
+
+[[actions]]
+id = "add"
+title = "Herdr Groups: add group"
+contexts = ["global"]
+command = ["python3", "plugin.py", "prompt", "add"]
+
+[[actions]]
+id = "rename"
+title = "Herdr Groups: rename group"
+contexts = ["global"]
+command = ["python3", "plugin.py", "prompt", "rename"]
+
+[[actions]]
+id = "color"
+title = "Herdr Groups: change group color"
+contexts = ["global"]
+command = ["python3", "plugin.py", "prompt", "color"]
+
+[[actions]]
+id = "delete"
+title = "Herdr Groups: delete group"
+contexts = ["global"]
+command = ["python3", "plugin.py", "prompt", "delete"]
+
+[[actions]]
+id = "status"
+title = "Herdr Groups: show groups"
+contexts = ["global"]
+command = ["python3", "plugin.py", "prompt", "status"]
+
+[[actions]]
+id = "manage"
+title = "Herdr Groups: manage groups"
+contexts = ["global", "workspace"]
+command = ["python3", "plugin.py", "manage"]
+
+[[actions]]
+id = "stop"
+title = "Herdr Groups: stop display updates"
+contexts = ["global"]
+command = ["python3", "plugin.py", "stop"]
+
+[[actions]]
+id = "unsetup"
+title = "Herdr Groups: remove owned headings and metadata"
+contexts = ["global"]
+command = ["python3", "plugin.py", "unsetup"]
+
+[[panes]]
+id = "manager"
+title = "Herdr Groups"
+placement = "popup"
+width = "85%"
+height = "75%"
+command = ["python3", "plugin.py", "menu"]
+
+[[panes]]
+id = "operation"
+title = "Herdr Groups"
+placement = "popup"
+width = "85%"
+height = "75%"
+command = ["python3", "plugin.py", "dialog"]
+
+[[events]]
+on = "workspace.created"
+command = ["python3", "plugin.py", "sync"]
+[[events]]
+on = "workspace.closed"
+command = ["python3", "plugin.py", "sync"]
+[[events]]
+on = "workspace.renamed"
+command = ["python3", "plugin.py", "sync"]
+[[events]]
+on = "workspace.updated"
+command = ["python3", "plugin.py", "sync"]
+[[events]]
+on = "workspace.moved"
+command = ["python3", "plugin.py", "sync"]
+[[events]]
+on = "workspace.reordered"
+command = ["python3", "plugin.py", "sync"]
+[[events]]
+on = "worktree.created"
+command = ["python3", "plugin.py", "sync"]
+[[events]]
+on = "worktree.opened"
+command = ["python3", "plugin.py", "sync"]
+[[events]]
+on = "worktree.removed"
+command = ["python3", "plugin.py", "sync"]
